@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mooli&family=Onest:wght@300;400&family=Roboto+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jaldi&family=M+PLUS+1p:wght@300&family=Maven+Pro&family=Oxanium:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@200&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+  
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-pagination-bullet {
+  background: azure;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: rgb(121, 255, 255);
+}
+
+.autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: cyan !important;
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: cyan;
+  fill: none;
+  stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #646464;
+}
+
+
+
+.MuiDataGrid-columnHeader{
+  width: 100%;
+  background-color: rgb(211, 255, 255);
+  color: rgb(3, 111, 97);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.MuiDataGrid-cell {
+  border: none;
+  outline: none;
+}
+
+.MuiDataGrid-root{
+  width: 48.8rem;
+  height: 10rem;
+}
+
+.MuiDataGrid-columnHeaderTitleContainer{
+  width: 20rem;
+}
+
+.MuiDialogContent-root{
+  width: 32rem;
+}
+
+.MuiTableCell-head{
+  background-color: rgb(224, 255, 189);
+}
+
+.actionBtnBend {
+  clip-path: polygon(78% 0%, 100% 0, 100% 100%, 0% 100%);
+}

@@ -1,0 +1,25 @@
+.chartHeading{
+    font-size: 3rem;
+}
+
+.barChart,
+.faq {
+    padding: 0 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .chartHeading{
+        font-size: 2.3rem;
+    }
+
+    .barChart,
+    .faq {
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .chartHeading{
+        font-size: 1.8rem;
+    }
+}

@@ -1,0 +1,125 @@
+.nameCardHolder {
+    padding-top: 6rem;
+    row-gap: 6rem;
+}
+
+.cardContainer {
+    width: 21rem;
+    height: 28rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition-duration: .5s;
+    cursor: pointer;
+}
+
+@media (max-width: 550px) {
+    .cardContainer {
+        overflow: hidden;
+        border-radius: 10px;
+    }
+}
+  
+.profileDiv {
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(24, 24, 24);
+    border-radius: 10px;
+    overflow: hidden;
+    transition-duration: .5s;
+    color: rgb(249, 240, 255);
+    font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+  
+.cardContainer:hover .profileDiv {
+    transform: translateX(-23%) translateY(-16%);
+    transition-duration: .5s;
+}
+  
+.infoDiv {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, rgb(193, 250, 222), rgb(172, 221, 253));
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1;
+}
+  
+.nameDiv {
+    width: 77%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: transparent;
+    font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    gap: 2px;
+}
+  
+.name {
+    margin: 0;
+    padding: 0;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: black;
+}
+  
+.role {
+    margin: 0;
+    padding: 0;
+    font-size: .92rem;
+    font-weight: 700;
+    color: rgb(48, 48, 48);
+    margin-bottom: 5px;
+}
+  
+.socialDiv {
+    width: 23%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8rem;
+    font-size: 1.7rem;
+}
+
+.socialMediaIcon:hover {
+    scale: 1.3;
+}
+
+.github:hover {
+    color:rgb(155, 130, 5)
+}
+.linkedin:hover {
+    color: rgb(62, 146, 214)
+} 
+.mail:hover {
+    color: rgb(255, 55, 98)
+} 
+.portfolio:hover {
+    color: rgb(1, 122, 52);
+} 
+  
+.infoDiv a {
+    width: 50%;
+}
+  
+.socials {
+    width: 100%;
+    fill: rgb(14, 14, 14);
+}
+

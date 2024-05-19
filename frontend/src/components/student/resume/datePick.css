@@ -1,0 +1,9 @@
+input[type="date"]::-webkit-calendar-picker-indicator{
+    color: rgb(212, 153, 255);
+    background-color: rgb(230, 194, 255);
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    cursor: pointer;
+    z-index: 34;
+}

@@ -1,0 +1,8 @@
+@media print {
+    .resume { /* Your container class for the resume */
+      overflow-y: auto; /* Allow content to overflow in print */
+      height: fit-content; /* Set height to content automatically */
+      margin: 0; /* Remove margins for better printing */
+    }
+  }
+  
