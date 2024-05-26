@@ -63,7 +63,6 @@ import { IoBriefcaseOutline } from "react-icons/io5";
 import { AiOutlineContacts } from "react-icons/ai";
 
 import avisek from '../../images/team/abhisekh.png';
-import Soumya from '../../images/team/Soumya.jpg';
 
 export const onlineCourses = [
     {
@@ -459,8 +458,8 @@ export const tabs = [
 
 export const teamMember = [
     {
-        name: 'Avisekh Nayek',
-        role: 'Back-End Developer',
+        name: 'Abhisekh Nayek',
+        role: 'Full Stack Developer',
         image: avisek,
         socialLinks: {
             github: 'https://github.com/AbhisekhNayek',
@@ -470,14 +469,25 @@ export const teamMember = [
         },
     },
     {
-        name: 'Soumya Sankar Das',
-        role: 'Front-End Developer',
-        image: Soumya,
+        name: 'Manab Pratim Maity',
+        role: 'Back-End Developer',
+        image: avisek,
         socialLinks: {
-            github: 'https://github.com/Soumya-0x000',
-            linkedin: 'https://www.linkedin.com/in/soumya-sankar-das-874085221/',
-            portfolio: 'https://portfolio-five-mu-72.vercel.app',
-            mail: 'soumyadas429@gmail.com',
+            github: '',
+            linkedin: '',
+            portfolio: '',
+            mail: '',
+        },
+    },
+    {
+        name: 'Sekh Mehboob',
+        role: 'Front-End Developer',
+        image: avisek,
+        socialLinks: {
+            github: '',
+            linkedin: '',
+            portfolio: '',
+            mail: '',
         },
     },
 ];
