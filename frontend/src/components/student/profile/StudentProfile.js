@@ -12,7 +12,7 @@ import profileImg from '../../../images/resume/profileImg.jfif'
 
 const StudentProfile = () => {
     const [studentData, setStudentData] = useState({});
-    const usn = localStorage.getItem('token');
+    const usn = localStorage.getItem('token');   // take usn from here to implement that job matchin
 
     useEffect(() => {
         fetch(`http://localhost:1337/api/studentProfile/${usn}`)

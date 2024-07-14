@@ -10,6 +10,7 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const studentProfileModel = require('./studentprofile')
 const jwt = require('jsonwebtoken')
+const axios = require('axios')
 dotenv.config()
 main().catch(err => console.log(err));
 
@@ -340,7 +341,7 @@ app.put('/api/updateApplicationStatus/:id', async (req, res) => {
 app.post('/api/newJobApplied', async (req, res) => {
   console.log(req.body)
   const newPosting = await AppliedCandidate.create(req.body)
-  const posting = await newPosting.save()
+  const posting = await newPosting.save()  //code check
   res.status(200).json({ status: "ok" })
 })
 
@@ -348,7 +349,7 @@ app.get('/api/getCandidateList/:id', async (req, res) => {
   const jobId = req.params.id;
   console.log("HI")
   try {
-    const list = await AppliedCandidate.find({ jobid: jobId })
+    const list = await AppliedCandidate.find({ jobid: jobId })  //check logic
     res.status(200).json(list);
   } catch (error) {
     console.log(error)
@@ -366,6 +367,19 @@ app.get('/api/getJobPosted/:id', async (req, res) => {
   } catch (error) {
     console.log(error)
     res.status(500).json({ error: 'Failed to retrieve job postings.' });
+  }
+})
+
+
+//To get the job description
+app.get('/api/getAllJobPosted',async (req,res)=>{
+  try {
+    const AllJobPostings = await Posting.find();
+    res.status(200).json({AllJobPostings});
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: 'Failed to retrieve All job postings.' });
+
   }
 })
 
@@ -514,8 +528,9 @@ app.put('/api/students/:usn', async (req, res) => {
   }
 });
 
+ //get a single student from here
 app.get('/api/StudentProfile/:id', async (req, res) => {
-  const usn = req.params.id;
+  const usn = req.params.id; 
   console.log(usn)
   try {
     const student = await Student.findOne({ usn: usn });
@@ -974,6 +989,60 @@ app.post('/api/resume-templates', async (req, res) => {
     res.status(500).json({ error: 'Failed to post resume template' });
   }
 });
+
+
+
+
+//Job Matching logic xd
+
+
+app.get('/api/perfectjob', async (req, res) => {
+  try {
+
+    // student profile
+    const response = await axios.get('http://localhost:1337/api/StudentProfile/2082207030122');
+    const studentDetails = response.data;
+
+    const Importanttext = {
+      text: `${studentDetails.keySkills},${studentDetails.education1},${studentDetails.course1}`
+    };
+
+  
+    const resumeParseResponse = await axios.post('http://127.0.0.1:5000/parse_resume', Importanttext);
+    const resumeData = resumeParseResponse.data;
+
+   
+    const responsej = await axios.get('http://localhost:1337/api/getAllJobPosted');
+    const jobRequirement = responsej.data;
+    
+   
+    const jobDescriptions = jobRequirement.AllJobPostings.map(job => job.JobDescription);
+
+    const matchJobRequestData = {
+      resumeData,
+      jobDescriptions
+    };
+
+    const jobMatchResponse = await axios.post('http://127.0.0.1:5000/match_job', matchJobRequestData);
+
+    console.log(jobMatchResponse.data);
+    res.status(200).json(jobMatchResponse.data);
+
+  } catch (error) {
+    console.log('Error matching job ...', error);
+    res.status(500).json({ error: 'Failed to match job' });
+  }
+});
+
+
+//chatBot
+
+
+
+
+
+
+
 
 
 app.listen(1337, () => {

@@ -38,6 +38,7 @@ import chat from '../../images/chat.png';
 import academics from '../../images/academics.png';
 import profile from '../../images/profile.png';
 import feedback from '../../images/feedback.png';
+import bestjob from '../../images/bestjob.png'
 
 import learning from '../../images/banner/storytelling.png';
 import certificate from '../../images/banner/diploma.png';
@@ -252,6 +253,15 @@ export const buttonsData = [
         textColor: 'text-[#55BE16]',
         titleColor: 'text-[#00731A]',
         link: '/Feedback'
+    },
+    {
+        imgSrc: bestjob,
+        alt: 'Best Job',
+        text: 'Discover your perfect career match. Find jobs tailored to your skills and aspirations.',
+        bgColor: 'bg-[#FFACD5] bg-opacity-30 border-2 border-pink-300 hover:shadow-[#FFACD5]',
+        textColor: 'text-[#55BE16]',
+        titleColor: 'text-[#00731A]',
+        link: '/bestjob'
     }
 ];
 

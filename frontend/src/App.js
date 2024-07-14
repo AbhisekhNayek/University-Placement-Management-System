@@ -34,6 +34,7 @@ import StudentCoverLetter from './components/student/coverLetter/StudentCoverLet
 import CoverLetter from './components/student/coverLetter/CoverLetter';
 import ChatPage from './chat/Chat';
 import FeedbackTable from './components/student/Feedback';
+import BestJob from './components/student/bestjob/bestjob';
 
 import AdminPlacedStudent from './components/admin/AdminPlacedStudent'
 import AdminCompanyView from './components/admin/AdminCompanyView';
@@ -130,6 +131,7 @@ function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/placement" element={<Placement />} />
           <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/bestjob" element={<BestJob />} />
         </Routes>
       </Router>
     </div>
